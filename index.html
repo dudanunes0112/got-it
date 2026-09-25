@@ -1,12 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goit</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ConectaEdu - Plataforma Colaborativa de Aprendizado</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <H1>Título2</H1>
-    <h2>Teste Goit</h2>
+
+  <!-- Cabeçalho / Navbar -->
+  <header class="navbar">
+    <div class="logo">
+      <span class="logo-icon">🎓</span> Conecta<span class="logo-highlight">Edu</span>
+    </div>
+    
+    <div class="user-credits">
+      <span class="credit-icon">🪙</span>
+      <span class="credit-label">Saldo:</span>
+      <strong id="credit-balance">3</strong>
+      <span class="credit-unit">Horas-Crédito</span>
+    </div>
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <main class="container">
+
+    <!-- Banner Principal -->
+    <section class="hero">
+      <h1>Aprenda, Ensine e Transforme sua Comunidade</h1>
+      <p>Troque seus conhecimentos de forma 100% gratuita usando nosso Banco de Horas e conquiste Certificados Oficiais de Impacto Social para o seu currículo.</p>
+    </section>
+
+    <!-- Grid de Funcionalidades -->
+    <div class="actions-grid">
+
+      <!-- Card: Agendar Aulas (Receber Mentoria) -->
+      <div class="card">
+        <div class="card-tag tag-learn">Aprender</div>
+        <h2>Precisa de Ajuda?</h2>
+        <p>Agende uma aula particular com um colega para tirar suas dúvidas sobre matérias escolares ou projetos.</p>
+        <div class="card-footer">
+          <span class="cost-badge">Custo: 1 Hora-Crédito</span>
+          <button class="btn btn-primary" onclick="agendarMentoria()">Agendar Mentoria</button>
+        </div>
+        <div id="alert-agendar" class="alert"></div>
+      </div>
+
+      <!-- Card: Dar Aulas (Oferecer Mentoria) -->
+      <div class="card">
+        <div class="card-tag tag-teach">Ensinar</div>
+        <h2>Quer Ajudar um Colega?</h2>
+        <p>Ajude um estudante em uma matéria que você domina. Recarregue seu saldo e acumule horas para o seu certificado.</p>
+        <div class="card-footer">
+          <span class="reward-badge">Ganho: +1 Hora-Crédito</span>
+          <button class="btn btn-secondary" onclick="registrarMentoriaEnsinada()">Registrar Aula Dada</button>
+        </div>
+        <div id="alert-ensinar" class="alert"></div>
+      </div>
+
+    </div>
+
+    <!-- Seção do Certificado -->
+    <section class="card certificate-card">
+      <div class="certificate-header">
+        <div class="cert-icon">📜</div>
+        <div>
+          <h2>Seu Certificado Oficial de Impacto Social</h2>
+          <p>Sua dedicação como mentor é transformada em horas comprovadas de voluntariado para o seu currículo e atividades acadêmicas.</p>
+        </div>
+      </div>
+
+      <div class="progress-container">
+        <div class="progress-info">
+          <span>Horas ensinadas como mentor:</span>
+          <strong><span id="hours-taught">3</span> de <span id="target-hours">10</span> horas</strong>
+        </div>
+        
+        <div class="progress-bar-bg">
+          <div id="progress-fill" class="progress-bar-fill"></div>
+        </div>
+      </div>
+
+      <button id="btn-certificate" class="btn btn-success" disabled onclick="emitirCertificado()">
+        Emitir Certificado (Faltam 7h)
+      </button>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
