@@ -1,96 +1,653 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ConectaEdu - Plataforma Colaborativa de Aprendizado</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EqualLearn | Conhecimento que se compartilha</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <!-- Cabeçalho / Navbar -->
-  <header class="navbar">
-    <div class="logo">
-      <span class="logo-icon">🎓</span> Conecta<span class="logo-highlight">Edu</span>
+    <!-- HEADER -->
+    <header>
+        <div class="navbar">
+
+            <a href="#inicio" class="logo">
+                <span class="logo-icon">↗</span>
+                EqualLearn
+            </a>
+
+            <nav>
+                <a href="#inicio">Início</a>
+                <a href="#match">Encontrar ajuda</a>
+                <a href="#banco">Banco de Horas</a>
+                <a href="#impacto">Nosso impacto</a>
+            </nav>
+
+            <div class="hours-badge">
+                ⏱ <span id="headerHours">04h 30min</span>
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- HERO -->
+    <main>
+
+        <section class="hero" id="inicio">
+
+            <div class="hero-content">
+
+                <div class="hero-text">
+
+                    <div class="tag">
+                        🌱 Educação • Colaboração • Impacto
+                    </div>
+
+                    <h1>
+                        Conhecimento que se
+                        <span>compartilha.</span>
+                    </h1>
+
+                    <p>
+                        O EqualLearn conecta estudantes que precisam
+                        de ajuda com estudantes que podem ensinar.
+                        Uma rede de mentoria colaborativa para reduzir
+                        a desigualdade educacional.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <button
+                            class="btn btn-primary"
+                            onclick="scrollToSection('match')">
+                            Quero aprender
+                        </button>
+
+                        <button
+                            class="btn btn-green"
+                            onclick="scrollToSection('banco')">
+                            Quero ensinar
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="impact-card">
+
+                    <div class="impact-card-header">
+
+                        <h3>Impacto da comunidade</h3>
+
+                        <div class="live">
+                            <span class="live-dot"></span>
+                            AO VIVO
+                        </div>
+
+                    </div>
+
+                    <div class="big-number" id="heroHours">
+                        140h
+                    </div>
+
+                    <div class="big-number-label">
+                        de apoio escolar compartilhado
+                    </div>
+
+                    <div class="mini-stats">
+
+                        <div class="mini-stat">
+                            <strong id="studentsImpacted">85</strong>
+                            <span>estudantes atendidos</span>
+                        </div>
+
+                        <div class="mini-stat">
+                            <strong id="sessions">140</strong>
+                            <span>mentorias realizadas</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- COMO FUNCIONA -->
+        <section>
+
+            <div class="section-container">
+
+                <div class="section-title">
+
+                    <div class="eyebrow">
+                        Como funciona
+                    </div>
+
+                    <h2>
+                        Uma comunidade onde todos
+                        podem aprender e ensinar.
+                    </h2>
+
+                    <p>
+                        O conhecimento deixa de ser apenas consumido
+                        e passa a circular entre os próprios estudantes.
+                    </p>
+
+                </div>
+
+
+                <div class="steps">
+
+                    <div class="step">
+                        <div class="step-number">01</div>
+
+                        <h3>Crie seu perfil</h3>
+
+                        <p>
+                            Informe o que você precisa aprender
+                            e o que pode ensinar.
+                        </p>
+                    </div>
+
+
+                    <div class="step">
+                        <div class="step-number">02</div>
+
+                        <h3>Encontre seu Match</h3>
+
+                        <p>
+                            O sistema encontra estudantes
+                            compatíveis com sua necessidade.
+                        </p>
+                    </div>
+
+
+                    <div class="step">
+                        <div class="step-number">03</div>
+
+                        <h3>Faça a mentoria</h3>
+
+                        <p>
+                            Estudem juntos presencialmente
+                            ou online.
+                        </p>
+                    </div>
+
+
+                    <div class="step">
+                        <div class="step-number">04</div>
+
+                        <h3>Gere impacto</h3>
+
+                        <p>
+                            As horas compartilhadas ficam
+                            registradas no seu Banco de Horas.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- MATCH -->
+        <section id="match">
+
+            <div class="section-container">
+
+                <div class="section-title">
+
+                    <div class="eyebrow">
+                        Match de Aprendizado
+                    </div>
+
+                    <h2>
+                        Encontre alguém que possa ajudar.
+                    </h2>
+
+                    <p>
+                        Filtre os estudantes por matéria e
+                        disponibilidade para encontrar o mentor ideal.
+                    </p>
+
+                </div>
+
+
+                <div class="filters">
+
+                    <div class="input-group">
+
+                        <label for="subjectFilter">
+                            MATÉRIA
+                        </label>
+
+                        <select id="subjectFilter">
+
+                            <option value="Todas">
+                                Todas as matérias
+                            </option>
+
+                            <option value="Matemática">
+                                Matemática
+                            </option>
+
+                            <option value="Redação">
+                                Redação
+                            </option>
+
+                            <option value="Física">
+                                Física
+                            </option>
+
+                            <option value="História">
+                                História
+                            </option>
+
+                            <option value="Inglês">
+                                Inglês
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="periodFilter">
+                            HORÁRIO
+                        </label>
+
+                        <select id="periodFilter">
+
+                            <option value="Todos">
+                                Todos os horários
+                            </option>
+
+                            <option value="Manhã">
+                                Manhã
+                            </option>
+
+                            <option value="Tarde">
+                                Tarde
+                            </option>
+
+                            <option value="Noite">
+                                Noite
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <button
+                        class="btn btn-primary"
+                        onclick="filterTutors()">
+
+                        🔎 Encontrar Match
+
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="tutor-grid"
+                    id="tutorGrid">
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- BANCO DE HORAS -->
+        <section id="banco">
+
+            <div class="section-container">
+
+                <div class="section-title">
+
+                    <div class="eyebrow">
+                        Banco de Horas Sociais
+                    </div>
+
+                    <h2>
+                        Seu conhecimento também gera impacto.
+                    </h2>
+
+                    <p>
+                        Cada mentoria realizada como tutor gera
+                        uma hora de impacto social registrada no seu perfil.
+                    </p>
+
+                </div>
+
+
+                <div class="bank-grid">
+
+                    <div class="hours-card">
+
+                        <div class="label">
+                            SEU SALDO DE IMPACTO
+                        </div>
+
+                        <div
+                            class="hours-value"
+                            id="hoursValue">
+                            04h 30min
+                        </div>
+
+                        <div class="hours-description">
+                            Horas acumuladas ajudando outros estudantes
+                            da comunidade escolar.
+                        </div>
+
+                    </div>
+
+
+                    <div class="certificate-card">
+
+                        <div class="certificate-icon">
+                            🏆
+                        </div>
+
+                        <h3>
+                            Certificado de Impacto Social
+                        </h3>
+
+                        <p>
+                            Ao atingir o número mínimo de horas,
+                            você pode gerar um certificado que
+                            reconhece sua participação voluntária
+                            na comunidade escolar.
+                        </p>
+
+                        <button
+                            class="btn btn-green"
+                            onclick="generateCertificate()">
+
+                            Gerar certificado
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- IMPACTO -->
+        <section id="impacto">
+
+            <div class="section-container">
+
+                <div class="section-title">
+
+                    <div class="eyebrow">
+                        Mural de Impacto
+                    </div>
+
+                    <h2>
+                        O impacto de cada estudante
+                        constrói o impacto da comunidade.
+                    </h2>
+
+                </div>
+
+
+                <div class="impact-grid">
+
+                    <div class="impact-stat">
+
+                        <div class="icon">
+                            ⏱️
+                        </div>
+
+                        <strong id="impactHours">
+                            140
+                        </strong>
+
+                        <span>
+                            horas de mentoria
+                        </span>
+
+                    </div>
+
+
+                    <div class="impact-stat">
+
+                        <div class="icon">
+                            👥
+                        </div>
+
+                        <strong id="impactStudents">
+                            85
+                        </strong>
+
+                        <span>
+                            estudantes atendidos
+                        </span>
+
+                    </div>
+
+
+                    <div class="impact-stat">
+
+                        <div class="icon">
+                            🤝
+                        </div>
+
+                        <strong id="impactSessions">
+                            140
+                        </strong>
+
+                        <span>
+                            mentorias realizadas
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- MODAL DE AGENDAMENTO -->
+    <div
+        class="modal-overlay"
+        id="bookingModal">
+
+        <div class="modal">
+
+            <button
+                class="close-modal"
+                onclick="closeModal()">
+                ×
+            </button>
+
+            <h2>
+                Agendar mentoria
+            </h2>
+
+            <p
+                class="modal-description"
+                id="modalTutorDescription">
+                Escolha um horário para sua mentoria.
+            </p>
+
+
+            <div class="modal-field">
+
+                <label>
+                    DATA
+                </label>
+
+                <input
+                    id="bookingDate"
+                    type="date">
+
+            </div>
+
+
+            <div class="modal-field">
+
+                <label>
+                    HORÁRIO
+                </label>
+
+                <select id="bookingTime">
+
+                    <option>14:00</option>
+                    <option>15:00</option>
+                    <option>16:00</option>
+                    <option>17:00</option>
+
+                </select>
+
+            </div>
+
+
+            <button
+                class="btn btn-primary"
+                onclick="confirmBooking()">
+
+                Confirmar agendamento
+
+            </button>
+
+        </div>
+
     </div>
-    
-    <div class="user-credits">
-      <span class="credit-icon">🪙</span>
-      <span class="credit-label">Saldo:</span>
-      <strong id="credit-balance">3</strong>
-      <span class="credit-unit">Horas-Crédito</span>
+
+
+    <!-- MODAL DE CERTIFICADO -->
+    <div
+        class="modal-overlay"
+        id="certificateModal">
+
+        <div class="modal">
+
+            <button
+                class="close-modal"
+                onclick="closeCertificate()">
+                ×
+            </button>
+
+
+            <div class="certificate">
+
+                <small>
+                    EqualLearn
+                </small>
+
+                <h2>
+                    Certificado de Impacto Social
+                </h2>
+
+                <div class="certificate-name">
+                    Estudante EqualLearn
+                </div>
+
+                <p>
+                    Certificamos que este estudante participou
+                    voluntariamente da rede de mentoria colaborativa
+                    EqualLearn, compartilhando conhecimento com sua
+                    comunidade escolar.
+                </p>
+
+                <div
+                    class="certificate-hours"
+                    id="certificateHours">
+                    04h 30min
+                </div>
+
+                <p>
+                    Horas de impacto social registradas
+                </p>
+
+            </div>
+
+
+            <button
+                class="btn btn-primary"
+                onclick="closeCertificate()">
+
+                Fechar
+
+            </button>
+
+        </div>
+
     </div>
-  </header>
 
-  <!-- Conteúdo Principal -->
-  <main class="container">
 
-    <!-- Banner Principal -->
-    <section class="hero">
-      <h1>Aprenda, Ensine e Transforme sua Comunidade</h1>
-      <p>Troque seus conhecimentos de forma 100% gratuita usando nosso Banco de Horas e conquiste Certificados Oficiais de Impacto Social para o seu currículo.</p>
-    </section>
-
-    <!-- Grid de Funcionalidades -->
-    <div class="actions-grid">
-
-      <!-- Card: Agendar Aulas (Receber Mentoria) -->
-      <div class="card">
-        <div class="card-tag tag-learn">Aprender</div>
-        <h2>Precisa de Ajuda?</h2>
-        <p>Agende uma aula particular com um colega para tirar suas dúvidas sobre matérias escolares ou projetos.</p>
-        <div class="card-footer">
-          <span class="cost-badge">Custo: 1 Hora-Crédito</span>
-          <button class="btn btn-primary" onclick="agendarMentoria()">Agendar Mentoria</button>
-        </div>
-        <div id="alert-agendar" class="alert"></div>
-      </div>
-
-      <!-- Card: Dar Aulas (Oferecer Mentoria) -->
-      <div class="card">
-        <div class="card-tag tag-teach">Ensinar</div>
-        <h2>Quer Ajudar um Colega?</h2>
-        <p>Ajude um estudante em uma matéria que você domina. Recarregue seu saldo e acumule horas para o seu certificado.</p>
-        <div class="card-footer">
-          <span class="reward-badge">Ganho: +1 Hora-Crédito</span>
-          <button class="btn btn-secondary" onclick="registrarMentoriaEnsinada()">Registrar Aula Dada</button>
-        </div>
-        <div id="alert-ensinar" class="alert"></div>
-      </div>
-
+    <!-- TOAST -->
+    <div
+        class="toast"
+        id="toast">
+        Mentoria agendada com sucesso!
     </div>
 
-    <!-- Seção do Certificado -->
-    <section class="card certificate-card">
-      <div class="certificate-header">
-        <div class="cert-icon">📜</div>
-        <div>
-          <h2>Seu Certificado Oficial de Impacto Social</h2>
-          <p>Sua dedicação como mentor é transformada em horas comprovadas de voluntariado para o seu currículo e atividades acadêmicas.</p>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-content">
+
+            <div>
+
+                <div class="footer-logo">
+                    EqualLearn
+                </div>
+
+                <p>
+                    Conhecimento que se compartilha,
+                    desigualdade que se reduz.
+                </p>
+
+            </div>
+
+            <p>
+                Projeto alinhado à ODS 10 — Redução das Desigualdades.
+            </p>
+
         </div>
-      </div>
 
-      <div class="progress-container">
-        <div class="progress-info">
-          <span>Horas ensinadas como mentor:</span>
-          <strong><span id="hours-taught">3</span> de <span id="target-hours">10</span> horas</strong>
-        </div>
-        
-        <div class="progress-bar-bg">
-          <div id="progress-fill" class="progress-bar-fill"></div>
-        </div>
-      </div>
+    </footer>
 
-      <button id="btn-certificate" class="btn btn-success" disabled onclick="emitirCertificado()">
-        Emitir Certificado (Faltam 7h)
-      </button>
-    </section>
 
-  </main>
+    <script src="script.js"></script>
 
-  <script src="script.js"></script>
 </body>
 </html>
+```
